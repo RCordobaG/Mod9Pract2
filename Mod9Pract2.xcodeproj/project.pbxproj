@@ -7,25 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B1FC1E42C4E0FF7004DBCBE /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1FC1E32C4E0FF7004DBCBE /* AddItemViewController.swift */; };
+		5B2E27A52C4DB9BF00210466 /* CocktailJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2E27A42C4DB9BF00210466 /* CocktailJSON.swift */; };
+		5B2E27A72C4DBA3100210466 /* CocktailManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2E27A62C4DBA3100210466 /* CocktailManager.swift */; };
+		5B2E27AD2C4DC70C00210466 /* CocktailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2E27AC2C4DC70C00210466 /* CocktailCell.swift */; };
 		5B5385F72C38BB9B00F70CFE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5385F62C38BB9B00F70CFE /* AppDelegate.swift */; };
 		5B5385F92C38BB9B00F70CFE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5385F82C38BB9B00F70CFE /* SceneDelegate.swift */; };
-		5B5385FB2C38BB9B00F70CFE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5385FA2C38BB9B00F70CFE /* ViewController.swift */; };
+		5B5385FB2C38BB9B00F70CFE /* CocktailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5385FA2C38BB9B00F70CFE /* CocktailViewController.swift */; };
 		5B5385FE2C38BB9B00F70CFE /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 5B5385FD2C38BB9B00F70CFE /* Base */; };
 		5B5386012C38BB9B00F70CFE /* Mod9Pract2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5B5385FF2C38BB9B00F70CFE /* Mod9Pract2.xcdatamodeld */; };
 		5B5386032C38BB9B00F70CFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B5386022C38BB9B00F70CFE /* Assets.xcassets */; };
 		5B5386062C38BB9B00F70CFE /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 5B5386052C38BB9B00F70CFE /* Base */; };
+		5BB0A9CA2C4DE3D20099F95D /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB0A9C92C4DE3D20099F95D /* NetworkMonitor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5B1FC1E32C4E0FF7004DBCBE /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
+		5B2E27A42C4DB9BF00210466 /* CocktailJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailJSON.swift; sourceTree = "<group>"; };
+		5B2E27A62C4DBA3100210466 /* CocktailManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailManager.swift; sourceTree = "<group>"; };
+		5B2E27AC2C4DC70C00210466 /* CocktailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailCell.swift; sourceTree = "<group>"; };
 		5B5385F32C38BB9B00F70CFE /* Mod9Pract2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mod9Pract2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B5385F62C38BB9B00F70CFE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B5385F82C38BB9B00F70CFE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5B5385FA2C38BB9B00F70CFE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5B5385FA2C38BB9B00F70CFE /* CocktailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailViewController.swift; sourceTree = "<group>"; };
 		5B5385FD2C38BB9B00F70CFE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5B5386002C38BB9B00F70CFE /* Mod9Pract2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Mod9Pract2.xcdatamodel; sourceTree = "<group>"; };
 		5B5386022C38BB9B00F70CFE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5B5386052C38BB9B00F70CFE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5B5386072C38BB9B00F70CFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5BB0A9C92C4DE3D20099F95D /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +49,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5B2E27A02C4DB78A00210466 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5B2E27AC2C4DC70C00210466 /* CocktailCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5B2E27A12C4DB78F00210466 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5B5385FA2C38BB9B00F70CFE /* CocktailViewController.swift */,
+				5B1FC1E32C4E0FF7004DBCBE /* AddItemViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5B2E27A22C4DB79700210466 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5B2E27A42C4DB9BF00210466 /* CocktailJSON.swift */,
+				5B2E27A62C4DBA3100210466 /* CocktailManager.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5B2E27A32C4DB79D00210466 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5BB0A9C92C4DE3D20099F95D /* NetworkMonitor.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		5B5385EA2C38BB9B00F70CFE = {
 			isa = PBXGroup;
 			children = (
@@ -58,9 +102,12 @@
 		5B5385F52C38BB9B00F70CFE /* Mod9Pract2 */ = {
 			isa = PBXGroup;
 			children = (
+				5B2E27A32C4DB79D00210466 /* Extensions */,
+				5B2E27A22C4DB79700210466 /* Model */,
+				5B2E27A12C4DB78F00210466 /* Controller */,
+				5B2E27A02C4DB78A00210466 /* View */,
 				5B5385F62C38BB9B00F70CFE /* AppDelegate.swift */,
 				5B5385F82C38BB9B00F70CFE /* SceneDelegate.swift */,
-				5B5385FA2C38BB9B00F70CFE /* ViewController.swift */,
 				5B5385FC2C38BB9B00F70CFE /* Main.storyboard */,
 				5B5386022C38BB9B00F70CFE /* Assets.xcassets */,
 				5B5386042C38BB9B00F70CFE /* LaunchScreen.storyboard */,
@@ -142,8 +189,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B5386012C38BB9B00F70CFE /* Mod9Pract2.xcdatamodeld in Sources */,
-				5B5385FB2C38BB9B00F70CFE /* ViewController.swift in Sources */,
+				5BB0A9CA2C4DE3D20099F95D /* NetworkMonitor.swift in Sources */,
+				5B2E27AD2C4DC70C00210466 /* CocktailCell.swift in Sources */,
+				5B2E27A72C4DBA3100210466 /* CocktailManager.swift in Sources */,
+				5B5385FB2C38BB9B00F70CFE /* CocktailViewController.swift in Sources */,
+				5B1FC1E42C4E0FF7004DBCBE /* AddItemViewController.swift in Sources */,
 				5B5385F72C38BB9B00F70CFE /* AppDelegate.swift in Sources */,
+				5B2E27A52C4DB9BF00210466 /* CocktailJSON.swift in Sources */,
 				5B5385F92C38BB9B00F70CFE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
