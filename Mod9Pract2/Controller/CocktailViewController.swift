@@ -86,7 +86,6 @@ extension CocktailViewController: UITableViewDelegate, UITableViewDataSource{
                 print("File exists")
                 do{
                     data = try Data(contentsOf: cocktailsURL)
-                    print("Doble sexo")
                     cell?.cocktailImage.image = UIImage(data: data!)
                 }
                 

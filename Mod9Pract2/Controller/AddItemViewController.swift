@@ -29,6 +29,8 @@ class AddItemViewController: UIViewController {
     var isEditOp : Bool = false
     
     var date : String?
+    
+    var imageString : String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +48,28 @@ class AddItemViewController: UIViewController {
             cocktailTitle.text = newCocktailJSON?.name
             cocktailIngredients.text = newCocktailJSON?.ingredients
             cocktailDescription.text = newCocktailJSON?.directions
-        }
+            
+            let fileManager = FileManager.default
+            let documentsDirectory = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
+            var data : Data?
+            imageString = (newCocktailJSON?.img)!
+
+            let cocktailsURL = documentsDirectory.appending(path: newCocktailJSON?.img ?? "0.jpg")
+                //Check if file exists
+                if fileManager.fileExists(atPath: cocktailsURL.path){
+                    do{
+                        data = try Data(contentsOf: cocktailsURL)
+                        imagePreview.image = UIImage(data: data!)
+                    }
+                    
+                    catch{
+                        print("Error loading image")
+                        print(error)
+                    }
+                    
+                }
+            }
+        
 
         // Do any additional setup after loading the view.
     }
@@ -106,10 +129,14 @@ class AddItemViewController: UIViewController {
         newCocktailJSON?.name = cocktailTitle.text ?? ""
         newCocktailJSON?.ingredients = cocktailIngredients.text ?? ""
         newCocktailJSON?.directions = cocktailDescription.text ?? ""
-        newCocktailJSON?.img = ((date ?? "0")+".jpg")
+        if isEditOp{
+            newCocktailJSON?.img = (date ?? imageString)!
+        }
+        else{
+            newCocktailJSON?.img = ((date ?? "0")+".jpg")
+        }
         
-        print("Enseñame a amar tilin")
-        print(newCocktailJSON?.img)
+        
         destination.cocktailJSON = newCocktailJSON
         destination.isEdit = isEditOp
         
