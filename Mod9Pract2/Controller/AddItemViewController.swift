@@ -123,18 +123,15 @@ class AddItemViewController: UIViewController {
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //newNote = Note(title: noteTitle.text ?? "", content: noteContent.text, date: Date())
         let destination = segue.destination as! CocktailViewController
         
         newCocktailJSON?.name = cocktailTitle.text ?? ""
         newCocktailJSON?.ingredients = cocktailIngredients.text ?? ""
         newCocktailJSON?.directions = cocktailDescription.text ?? ""
-        if isEditOp{
-            newCocktailJSON?.img = (date ?? imageString)!
-        }
-        else{
-            newCocktailJSON?.img = ((date ?? "0")+".jpg")
-        }
+
+        newCocktailJSON?.img = imageString!
+        
+
         
         
         destination.cocktailJSON = newCocktailJSON
@@ -194,7 +191,7 @@ extension AddItemViewController : UIImagePickerControllerDelegate, UINavigationC
             }
             
             func saveToDocs (_ img: UIImage) {
-                date = Date().ISO8601Format()
+                date = String(Date().timeIntervalSince1970)
                 //encontramos la url de documents directory:
                 if var dUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first{
                     dUrl.append(path: ((date ?? "0") + ".jpg"))
@@ -203,6 +200,7 @@ extension AddItemViewController : UIImagePickerControllerDelegate, UINavigationC
                     do {
                         try bytes?.write(to:dUrl, options:.atomic)
                         print("Image saved in \(dUrl.absoluteString)")
+                        imageString = date! + ".jpg"
                     }
                     catch {
                         print("Error saving image")
