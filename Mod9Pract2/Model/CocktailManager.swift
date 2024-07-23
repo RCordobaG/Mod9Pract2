@@ -61,9 +61,10 @@ class CocktailManager{
     
     func getCocktail(at index : Int) -> CocktailJSON{
         let cocktailImageString = baseStr + imagesString + cocktailList[index].img
+        print(cocktailImageString)
         if let cocktailsURL = URL(string: cocktailImageString){
             let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-            let cocktailsDirectory = documentsDirectory.appending(path: cocktailsURL.path)
+            let cocktailsDirectory = documentsDirectory.appending(path: cocktailList[index].img)
             
             if FileManager.default.fileExists(atPath: cocktailsURL.path){
                 
@@ -98,7 +99,6 @@ class CocktailManager{
         //Check if file exists
         if fileManager.fileExists(atPath: cocktailsURL.path){
             do{
-                print("Opening file as it exists")
                 let jsonData = fileManager.contents(atPath: cocktailsURL.path)
                 //Decode json file into array
                 self.cocktailList = try JSONDecoder().decode([CocktailJSON].self, from: jsonData!)

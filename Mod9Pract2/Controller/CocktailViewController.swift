@@ -78,18 +78,20 @@ extension CocktailViewController: UITableViewDelegate, UITableViewDataSource{
         if let imageUrl = URL(string: imageString){
             let fileManager = FileManager.default
             let documentsDirectory = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
-            print ("Sexxo con el DR JRR")
-            print(cocktailJSONList[indexPath.row].img)
             let cocktailsURL = documentsDirectory.appending(path: cocktailJSONList[indexPath.row].img)
+            print(cocktailsURL)
             
             //Check if file exists
             if fileManager.fileExists(atPath: cocktailsURL.path){
+                print("File exists")
                 do{
-                    data = try Data(contentsOf: imageUrl)
+                    data = try Data(contentsOf: cocktailsURL)
+                    print("Doble sexo")
                     cell?.cocktailImage.image = UIImage(data: data!)
                 }
                 
                 catch{
+                    print("Error loading image")
                     print(error)
                 }
                 

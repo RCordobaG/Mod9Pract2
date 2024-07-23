@@ -106,8 +106,10 @@ class AddItemViewController: UIViewController {
         newCocktailJSON?.name = cocktailTitle.text ?? ""
         newCocktailJSON?.ingredients = cocktailIngredients.text ?? ""
         newCocktailJSON?.directions = cocktailDescription.text ?? ""
-        newCocktailJSON?.img = (date ?? "0")+".jpg"
+        newCocktailJSON?.img = ((date ?? "0")+".jpg")
         
+        print("Enseñame a amar tilin")
+        print(newCocktailJSON?.img)
         destination.cocktailJSON = newCocktailJSON
         destination.isEdit = isEditOp
         
@@ -168,7 +170,7 @@ extension AddItemViewController : UIImagePickerControllerDelegate, UINavigationC
                 date = Date().ISO8601Format()
                 //encontramos la url de documents directory:
                 if var dUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first{
-                    dUrl.append(path: date ?? "0" + ".jpg")
+                    dUrl.append(path: ((date ?? "0") + ".jpg"))
                     // obtener los bytes que representan la foto
                     let bytes = img.jpegData(compressionQuality: 0.5)
                     do {
