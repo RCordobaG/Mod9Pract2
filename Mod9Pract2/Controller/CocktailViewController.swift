@@ -15,10 +15,8 @@ class CocktailViewController: UIViewController {
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var cocktailManager : CocktailManager?
-    var cocktail : Cocktail?
     var cocktailJSON : CocktailJSON?
     
-    var cocktailObjectList : [Cocktail] = []
     var cocktailJSONList : [CocktailJSON] = []
     
     var isEdit : Bool = false
@@ -71,13 +69,36 @@ extension CocktailViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         cocktailJSONList = (cocktailManager?.getCocktailList())!
-        print(cocktailJSONList)
+        var data : Data?
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? CocktailCell
         cell?.nameLabel.text = cocktailJSONList[indexPath.row].name
         cell?.ingredientsLabel.text = cocktailJSONList[indexPath.row].ingredients
         cell?.descriptionLabel.text = cocktailJSONList[indexPath.row].directions
-        //cell?.cocktailImage.image = cocktailJSONList[indexPath.row].img
-        
+        let imageString = cocktailJSONList[indexPath.row].img
+        if let imageUrl = URL(string: imageString){
+            let fileManager = FileManager.default
+            let documentsDirectory = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
+            print ("Sexxo con el DR JRR")
+            print(cocktailJSONList[indexPath.row].img)
+            let cocktailsURL = documentsDirectory.appending(path: cocktailJSONList[indexPath.row].img)
+            
+            //Check if file exists
+            if fileManager.fileExists(atPath: cocktailsURL.path){
+                do{
+                    data = try Data(contentsOf: imageUrl)
+                    cell?.cocktailImage.image = UIImage(data: data!)
+                }
+                
+                catch{
+                    print(error)
+                }
+                
+                
+            }
+            else{
+                cocktailManager?.getCocktail(at: indexPath.row)
+            }
+        }
         return cell!
     }
     

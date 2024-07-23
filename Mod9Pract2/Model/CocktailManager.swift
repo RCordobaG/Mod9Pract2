@@ -15,14 +15,15 @@ class CocktailManager{
     private var cocktailList: [CocktailJSON] = []
     private var context : NSManagedObjectContext
     
+    let baseStr = "http://janzelaznog.com/DDAM/iOS/"
+    let imagesString = "drinksimages/"
+    
     init (context : NSManagedObjectContext){
         self.context = context
     }
     
     func loadJSON(){
-        let baseStr = "http://janzelaznog.com/DDAM/iOS/"
         let jsonStr = baseStr + "drinks.json"
-        
         if let cocktailJSONStr = URL(string: jsonStr){
             let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
             let cocktailsURL = documentsDirectory.appending(path: "drinks.json")
@@ -59,6 +60,29 @@ class CocktailManager{
     }
     
     func getCocktail(at index : Int) -> CocktailJSON{
+        let cocktailImageString = baseStr + imagesString + cocktailList[index].img
+        if let cocktailsURL = URL(string: cocktailImageString){
+            let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+            let cocktailsDirectory = documentsDirectory.appending(path: cocktailsURL.path)
+            
+            if FileManager.default.fileExists(atPath: cocktailsURL.path){
+                
+            }
+            else{
+                if monitor.isReachable && monitor.connectionType == "WiFi"{
+                    URLSession.shared.downloadTask(with: cocktailsURL){location, response, error in
+                        guard let location = location, error == nil else{return}
+                        do{
+                            try FileManager.default.moveItem(at: location, to: cocktailsDirectory)
+                            print("File \(self.cocktailList[index].img) downloaded to Documents")
+                        }
+                        catch{
+                            print(error)
+                        }
+                    }.resume()
+                }
+            }
+        }
         return cocktailList[index]
     }
     

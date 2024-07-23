@@ -18,6 +18,8 @@
 		5B5386012C38BB9B00F70CFE /* Mod9Pract2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5B5385FF2C38BB9B00F70CFE /* Mod9Pract2.xcdatamodeld */; };
 		5B5386032C38BB9B00F70CFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B5386022C38BB9B00F70CFE /* Assets.xcassets */; };
 		5B5386062C38BB9B00F70CFE /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 5B5386052C38BB9B00F70CFE /* Base */; };
+		5B643B332C4F03E20064907A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B643B322C4F03E20064907A /* AVFoundation.framework */; };
+		5B643B352C4F03EC0064907A /* Network.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B643B342C4F03EC0064907A /* Network.framework */; };
 		5BB0A9CA2C4DE3D20099F95D /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB0A9C92C4DE3D20099F95D /* NetworkMonitor.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +37,8 @@
 		5B5386022C38BB9B00F70CFE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5B5386052C38BB9B00F70CFE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5B5386072C38BB9B00F70CFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B643B322C4F03E20064907A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		5B643B342C4F03EC0064907A /* Network.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Network.framework; path = System/Library/Frameworks/Network.framework; sourceTree = SDKROOT; };
 		5BB0A9C92C4DE3D20099F95D /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -43,6 +47,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B643B332C4F03E20064907A /* AVFoundation.framework in Frameworks */,
+				5B643B352C4F03EC0064907A /* Network.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +94,7 @@
 			children = (
 				5B5385F52C38BB9B00F70CFE /* Mod9Pract2 */,
 				5B5385F42C38BB9B00F70CFE /* Products */,
+				5B643B312C4F03E20064907A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -115,6 +122,15 @@
 				5B5385FF2C38BB9B00F70CFE /* Mod9Pract2.xcdatamodeld */,
 			);
 			path = Mod9Pract2;
+			sourceTree = "<group>";
+		};
+		5B643B312C4F03E20064907A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5B643B342C4F03EC0064907A /* Network.framework */,
+				5B643B322C4F03E20064907A /* AVFoundation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
